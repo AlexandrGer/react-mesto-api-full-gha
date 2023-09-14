@@ -9,7 +9,7 @@ const userModel = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
-const { SECRET_KEY } = require('../utils/constants');
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 // Получение всех пользователей
 const getAllUsers = (req, res, next) => {
@@ -97,7 +97,7 @@ const loginUser = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        SECRET_KEY,
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
         { expiresIn: '7d' },
       );
       res.status(HTTP_STATUS_OK).send({ token });
