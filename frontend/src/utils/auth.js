@@ -1,8 +1,8 @@
 const authOptions = {
-	url: 'http://127.0.0.1:3000',
-	headers: {
-		'Content-Type': 'application/json'
-	}
+	url: 'http://alexandrger.nomoredomainsicu.ru',
+	// headers: {
+	// 	'Content-Type': 'application/json'
+	// }
 }
 
 class Auth {
