@@ -1,8 +1,8 @@
 const authOptions = {
 	url: 'http://api.alexandrger.nomoredomainsicu.ru',
-	// headers: {
-	// 	'Content-Type': 'application/json'
-	// }
+	headers: {
+		'Content-Type': 'application/json'
+	}
 }
 
 class Auth {
