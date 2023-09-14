@@ -1,7 +1,7 @@
 const apiOptions = {
-	url: 'https://mesto.nomoreparties.co/v1/cohort-68/',
+	url: 'http://api.alexandrger.nomoredomainsicu.ru',
 	headers: {
-		authorization: '3c161b6c-5a5d-4642-af7d-6f12393d02c0',
+		// authorization: '3c161b6c-5a5d-4642-af7d-6f12393d02c0',
 		'Content-Type': 'application/json'
 	}
 }
