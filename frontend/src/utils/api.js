@@ -2,7 +2,8 @@ const getHeaders = () => {
 	const jwt = localStorage.getItem("jwt");
 	if (jwt) {
 		return {
-			Authorization: `Bearer ${jwt}`
+			Authorization: `Bearer ${jwt}`,
+			'Content-Type': 'application/json'
 		}
 	}
 	return {}
@@ -10,10 +11,7 @@ const getHeaders = () => {
 
 const apiOptions = {
 	url: 'http://api.alexandrger.nomoredomainsicu.ru',
-	headers: {
-		Authorization: getHeaders(),
-		'Content-Type': 'application/json'
-	}
+	headers: getHeaders(),
 }
 
 class Api {
