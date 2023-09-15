@@ -1,5 +1,5 @@
 const authOptions = {
-	url: 'http://api.alexandrger.nomoredomainsicu.ru',
+	url: 'https://api.alexandrger.nomoredomainsicu.ru',
 	headers: {
 		'Content-Type': 'application/json'
 	}

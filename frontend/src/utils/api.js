@@ -1,5 +1,5 @@
 const apiOptions = {
-	url: 'http://api.alexandrger.nomoredomainsicu.ru'
+	url: 'https://api.alexandrger.nomoredomainsicu.ru'
 }
 
 class Api {
