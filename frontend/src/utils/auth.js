@@ -41,8 +41,18 @@ class Auth {
 		}).then(this._handleResponse);
 	}
 
-	checkToken(token) {
+	getUserInfo(token) {
 		return fetch(`${this._url}/users/me`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${token}`
+			}
+		}).then(this._handleResponse)
+	}
+
+	checkToken(token) {
+		return fetch(`${this._url}/users/`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
