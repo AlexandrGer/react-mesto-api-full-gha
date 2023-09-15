@@ -52,7 +52,7 @@ function App() {
 	}
 
 	function handleCardLike({ likes, id }) {
-		const isLiked = likes.some(i => i._id === currentUser._id);
+		const isLiked = likes.some(id => id === currentUser._id);
 
 		api.changeLikeCardStatus(id, isLiked).then((newCard) => {
 			setCards((cards) => cards.map((c) => c._id === id ? newCard : c));
@@ -132,7 +132,7 @@ function App() {
 
 	function handleLogin(password, email) {
 		auth.authorize(password, email).then((data) => {
-			localStorage.setItem("jwt", data.token);
+			localStorage.setItem("jwt", data.token)
 			setIsLoggedIn(true);
 			setEmail(email);
 			navigate('/')
@@ -143,9 +143,9 @@ function App() {
 
 	React.useEffect(() => {
 		function handleTokenCheck() {
-			const jwt = localStorage.getItem("jwt");
-			if (jwt) {
-				auth.checkToken(jwt).then((data) => {
+			const token = localStorage.getItem("jwt");
+			if (token) {
+				auth.checkToken(token).then((data) => {
 					setEmail(data.data.email);
 					setIsLoggedIn(true);
 				})
@@ -172,7 +172,7 @@ function App() {
 			<div className="page">
 				<div className="page__container">
 					<Header
-						loggedIn={isLoggedIn}
+						isLoggedIn={isLoggedIn}
 						email={email}
 						onSignOut={handleOnSignOut}
 					/>

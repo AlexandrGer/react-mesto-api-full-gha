@@ -5,7 +5,7 @@ export const Card = ({ name, img, likes, id, ownerId, onCardClick, onCardLike, o
 
 	const currentUser = React.useContext(CurrentUserContext);
 	const isOwn = ownerId === currentUser._id;
-	const isLiked = likes.some(i => i._id === currentUser._id);
+	const isLiked = likes.some((id) => id === currentUser._id);
 
 	function handleClick() {
 		onCardClick({ name, img });

@@ -1,9 +1,9 @@
-const jwt = localStorage.getItem("jwt");
+const token = localStorage.getItem('jwt');
 
 const apiOptions = {
 	url: 'http://api.alexandrger.nomoredomainsicu.ru',
 	headers: {
-		Authorization: `Bearer ${jwt}`,
+		Authorization: `Bearer ${token}`,
 		'Content-Type': 'application/json',
 	}
 }

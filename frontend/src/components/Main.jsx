@@ -1,13 +1,10 @@
 import React from 'react';
-// import avatar from '../images/Avatar.jpg';
-// import { api } from '../utils/api';
 import { Card } from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 export const Main = ({ cards, onEditAvatar, onEditProfile, onAddPlace, onCardClick, onCardLike, onCardDelete }) => {
 
 	const currentUser = React.useContext(CurrentUserContext);
-
 	return (
 
 		<main className="content">
@@ -51,7 +48,7 @@ export const Main = ({ cards, onEditAvatar, onEditProfile, onAddPlace, onCardCli
 								img={card.link}
 								likes={card.likes}
 								id={card._id}
-								ownerId={card.owner._id}
+								ownerId={card.owner}
 								onCardClick={onCardClick}
 								onCardLike={onCardLike}
 								onCardDelete={onCardDelete}
