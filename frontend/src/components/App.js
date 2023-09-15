@@ -158,61 +158,20 @@ function App() {
 		handleTokenCheck();
 	}, [])
 
-	// React.useEffect(() => {
-	// 	api.getUserData().then((data) => {
-	// 		setCurrentUser(data);
-	// 	}).catch((err) => console.log(`При загрузке данных Пользователя возникла ошибка: ${err}`))
-
-	// 	api.getCards().then((data) => {
-	// 		setCards(data);
-	// 	}).catch((err) => console.log(`При загрузке карточек с сервера возникла ошибка: ${err}`))
-	// }, [isLoggedIn])
-
 	React.useEffect(() => {
 		if (isLoggedIn) {
-			const token = localStorage.getItem('jwt')
 
-			auth.getUserInfo(token)
-				.then((user) => {
-					console.log(user)
-					setCurrentUser(user)
-				})
-				.catch((err) => console.log(err))
+			api.getUserData().then((user) => {
+				setCurrentUser(user);
+			}).catch((err) => console.log(`При загрузке данных Пользователя возникла ошибка: ${err}`))
+
+			api.getCards().then((cards) => {
+				setCards(cards.reverse());
+			}).catch((err) => console.log(`При загрузке карточек с сервера возникла ошибка: ${err}`))
+
 		}
 
 	}, [isLoggedIn])
-
-	React.useEffect(() => {
-		if (isLoggedIn) {
-			api.getCards()
-				.then((cards) => {
-					console.log(cards)
-					setCards(cards)
-				})
-				.catch((err) => console.log(err))
-		}
-	}, [isLoggedIn])
-
-
-	// React.useEffect(() => {
-	// 	handleTokenCheck();
-	// }, [])
-
-	// function handleTokenCheck() {
-	// 	const token = localStorage.getItem('jwt')
-
-	// 	if (token) {
-	// 		auth.checkToken(token)
-	// 			.then((data) => {
-	// 				console.log(data)
-	// 				setIsLoggedIn(true)
-	// 				setEmail(data.data.email)
-	// 			})
-	// 			.catch((err) => console.log(err))
-	// 	}
-	// }
-
-
 
 	return (
 		<CurrentUserContext.Provider value={currentUser}>

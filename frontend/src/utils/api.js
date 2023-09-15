@@ -1,11 +1,5 @@
-const token = localStorage.getItem('jwt');
-
 const apiOptions = {
-	url: 'http://api.alexandrger.nomoredomainsicu.ru',
-	headers: {
-		Authorization: `Bearer ${token}`,
-		'Content-Type': 'application/json',
-	}
+	url: 'http://api.alexandrger.nomoredomainsicu.ru'
 }
 
 class Api {
@@ -29,7 +23,11 @@ class Api {
 	// Получение данных о пользователе с сервера
 	getUserData() {
 		return this._request(`${this._url}/users/me`, {
-			headers: this._headers,
+			method: 'GET',
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 		})
 	}
 
@@ -37,7 +35,10 @@ class Api {
 	sendUserData(userData) {
 		return this._request(`${this._url}/users/me`, {
 			method: 'PATCH',
-			headers: this._headers,
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 			body: JSON.stringify({
 				name: userData.name,
 				about: userData.about
@@ -49,7 +50,10 @@ class Api {
 	sendAvatarData(userAvatar) {
 		return this._request(`${this._url}/users/me/avatar`, {
 			method: 'PATCH',
-			headers: this._headers,
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 			body: JSON.stringify({
 				avatar: userAvatar.avatar
 			})
@@ -60,7 +64,10 @@ class Api {
 	addNewCard({ name, link }) {
 		return this._request(`${this._url}/cards`, {
 			method: 'POST',
-			headers: this._headers,
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 			body: JSON.stringify({ name, link })
 		})
 	}
@@ -68,7 +75,11 @@ class Api {
 	// Загрузка карточек с сервера
 	getCards() {
 		return this._request(`${this._url}/cards`, {
-			headers: this._headers,
+			method: 'GET',
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 		})
 	}
 
@@ -76,7 +87,10 @@ class Api {
 	deleteCard(cardId) {
 		return this._request(`${this._url}/cards/${cardId}`, {
 			method: 'DELETE',
-			headers: this._headers,
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 		})
 	}
 
@@ -84,7 +98,10 @@ class Api {
 	putLike(cardId) {
 		return this._request(`${this._url}/cards/${cardId}/likes`, {
 			method: 'PUT',
-			headers: this._headers,
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 		})
 	}
 
@@ -92,7 +109,10 @@ class Api {
 	deleteLike(cardId) {
 		return this._request(`${this._url}/cards/${cardId}/likes`, {
 			method: 'DELETE',
-			headers: this._headers,
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+				'Content-type': 'application/json'
+			},
 		})
 	}
 
