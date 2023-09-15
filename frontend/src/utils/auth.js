@@ -1,8 +1,19 @@
 const authOptions = {
 	url: 'http://api.alexandrger.nomoredomainsicu.ru',
 	headers: {
+		Authorization: getHeaders,
 		'Content-Type': 'application/json'
 	}
+}
+
+const getHeaders = () => {
+	const jwt = localStorage.getItem("jwt");
+	if (jwt) {
+		return {
+			Authorization: `Bearer ${jwt}`
+		}
+	}
+	return {}
 }
 
 class Auth {
