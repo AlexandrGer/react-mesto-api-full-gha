@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-Публичный IP: http://84.201.157.231
+Публичный IP: 84.201.157.231
 
 Frontend https://alexandrger.nomoredomainsicu.ru/
 
