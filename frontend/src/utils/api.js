@@ -11,7 +11,7 @@ const getHeaders = () => {
 const apiOptions = {
 	url: 'http://api.alexandrger.nomoredomainsicu.ru',
 	headers: {
-		authorization: getHeaders,
+		getHeaders,
 		'Content-Type': 'application/json'
 	}
 }
