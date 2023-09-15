@@ -9,6 +9,7 @@ const userModel = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
+
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 // Получение всех пользователей
