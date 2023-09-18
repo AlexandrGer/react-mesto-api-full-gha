@@ -132,7 +132,7 @@ function App() {
 
 	function handleLogin(password, email) {
 		auth.authorize(password, email).then((data) => {
-			localStorage.setItem("jwt", data.token)
+			localStorage.setItem("jwt", data.token);
 			setIsLoggedIn(true);
 			setEmail(email);
 			navigate('/')
@@ -147,8 +147,9 @@ function App() {
 			if (token) {
 				auth.checkToken(token)
 					.then((data) => {
-						setEmail(data.data.email);
+						setEmail(data.email);
 						setIsLoggedIn(true);
+						navigate('/');
 					})
 					.catch((err) => {
 						console.log(err.status);
@@ -170,7 +171,6 @@ function App() {
 			}).catch((err) => console.log(`При загрузке карточек с сервера возникла ошибка: ${err}`))
 
 		}
-
 	}, [isLoggedIn])
 
 	return (

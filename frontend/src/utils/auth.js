@@ -42,7 +42,7 @@ class Auth {
 	}
 
 	checkToken(token) {
-		return fetch(`${this._url}/users/`, {
+		return fetch(`${this._url}/users/me`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
