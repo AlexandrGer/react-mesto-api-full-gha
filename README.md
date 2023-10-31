@@ -3,18 +3,20 @@
 <h1>Учебный frontend-проект "Mesto"</h1>
 
 <a href="https://github.com/AlexandrGer/react-mesto-api-full-gha" target="blank">
-<img src='./src/images/скрин-проекта.png'>
+<img src='./frontend/src/images/скрин-проекта.png'>
 </a>
 
 <h2>Описание проекта</h2>
 
-Данная [проектная](https://github.com/AlexandrGer/react-mesto-api-full-gha) работа - итоговая в рамках образовательной программы [Яндекс.Практикума.](https://practicum.yandex.ru/) Проект представляет собой адаптивное приложение (SPA), написанное на "React" (часть frontend) и "Node" (часть backend), с возможностью регистрации личного кабинета пользователя, редактированием данных и добавлением фотокарточек в общую галерею.<br>
+Данная [проектная](https://github.com/AlexandrGer/react-mesto-api-full-gha) работа - итоговая в рамках образовательной программы [Яндекс.Практикума.](https://practicum.yandex.ru/) Проект представляет собой адаптивное приложение (SPA), написанное на "React" (часть frontend) и "Node" (часть backend), с возможностью регистрации личного кабинета пользователя, редактированием данных и добавлением фотокарточек в общую галерею.<br><br>
 [Изначально](https://github.com/AlexandrGer/mesto) приложение было написано на нативных технологиях: JavaScript, CSS3 и HTML5. [Затем](https://github.com/AlexandrGer/react-mesto-auth) проект был перенесен на "React" с добавлением функционала регистрации и авторизации пользователей, [отдельно](https://github.com/AlexandrGer/express-mesto-gha) написана логика серверной части с фреймворком "Express" и в завершение обе части объединены и сохранены на виртуальной машине, размещенной на Яндекс Облаке.
 
 **Ссылки на проект**
+<br>
 IP 84.201.157.231
-
+<br>
 Frontend https://alexandrger.nomoredomainsicu.ru/
+<br>
 Backend https://api.alexandrger.nomoredomainsicu.ru/
 
 <h2>Макеты Figma</h2>
