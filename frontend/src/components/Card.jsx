@@ -45,3 +45,7 @@ export const Card = ({ name, img, likes, id, ownerId, onCardClick, onCardLike, o
 		</li>
 	)
 }
+
+
+
+

@@ -165,7 +165,6 @@ function App() {
 			api.getUserData().then((user) => {
 				setCurrentUser(user);
 			}).catch((err) => console.log(`При загрузке данных Пользователя возникла ошибка: ${err}`))
-
 			api.getCards().then((cards) => {
 				setCards(cards.reverse());
 			}).catch((err) => console.log(`При загрузке карточек с сервера возникла ошибка: ${err}`))
